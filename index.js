@@ -48,9 +48,11 @@ var drawFinalPlot = function(d, screen, xScale, yScale)
 //Define fnc to initialize Final vs. HW graph
 var finalGraph = function(d)
 {
+    console.log("finalGraph is called");
+    
+    //Remove circles first
     d3.selectAll("circle").remove();
     
-    console.log("finalGraph is called");
     //Set graph size
     var screen = {width: 300, height: 300}
     
@@ -101,10 +103,12 @@ var drawQuizPlot = function(d, screen, xScale, yScale)
 
 //Define fnc to initialize Quiz vs. HW graph
 var quizGraph = function(d)
-{
-    d3.selectAll("circle").remove();
-    
+{    
     console.log("quizGraph is called");
+    
+    //Remove circles first
+    d3.selectAll("circle").remove();
+
     //Set graph size
     var screen = {width: 300, height: 300}
     
@@ -135,7 +139,7 @@ var successFnc = function(d)
 {
     console.log(d);
     
-//    //Final vs. HW
+    //Final vs. HW
     d3.select("#final")
         .on("click", function(){finalGraph(d)})
     
